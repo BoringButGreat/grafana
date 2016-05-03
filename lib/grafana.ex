@@ -1,0 +1,2 @@
+defmodule Grafana do
+end
