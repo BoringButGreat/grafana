@@ -4,17 +4,29 @@
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
-
   1. Add grafana to your list of dependencies in `mix.exs`:
-
-        def deps do
-          [{:grafana, "~> 0.0.1"}]
-        end
+     ```elixir
+     def deps do
+       [{:grafana, "~> 0.0.1", github: "boringbutgreat/grafana"}]
+     end
+     ```
 
   2. Ensure grafana is started before your application:
+     ```elixir
+     def application do
+       [applications: [:grafana]]
+     end
+     ```
 
-        def application do
-          [applications: [:grafana]]
-        end
+  3. Configure the environment variables in your config files:
+     ```elixir
+     config :grafana,
+       server: "<your grafana server>",
+       username: "<your username>",
+       password: "<your password>"
+     ```
 
+## Mocked mode
+  ```elixir
+  config :worldping, api_host: "test"
+  ```
