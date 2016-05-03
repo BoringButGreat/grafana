@@ -16,7 +16,7 @@ defmodule Grafana.Users do
   @doc """
   Update user with given id as specified by json.
   """
-  def update(id), do: api_put "#{@path}/#{id}", json
+  def update(id, json), do: api_put "#{@path}/#{id}", json
 
   @doc """
   Get all organizations associated with given user id.

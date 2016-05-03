@@ -21,14 +21,10 @@ use Mix.Config
 #     config :logger, level: :info
 #
 if Mix.env == :test do
-  config :grafana, server: "test"
+  config :grafana, api_host: "test"
 else
-  config :grafana, server: "http://docs.grafana.org/reference/http_api/"
+  config :grafana, api_host: "http://docs.grafana.org/reference/http_api/"
 end
-
-config :grafana,
-  :username "test",
-  :password "test"
 
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment

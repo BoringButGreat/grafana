@@ -1,27 +1,36 @@
 defmodule Grafana.API.Real do
-  @server Application.get_env(:grafana, :server)
-  @username Application.get_env(:grafana, :username)
-  @password Application.get_env(:grafana, :password)
-  @auth {@username, @password}
+  @api_host Application.get_env(:grafana, :api_host)
+  @api_key Application.get_env(:grafana, :api_key)
+  @headers ["Authorization": @api_key]
 
   # Inside each individual API query, we can use a generic API call by sending the
   # appropriate arguments to the right path.
   def api_get(path) do
-    HTTPotion.get(@server <> path, [basic_auth: @auth])
+    HTTPotion.get(@api_host <> path, [headers: @headers])
     |> validate
   end
   def api_get(path, query_args) do
-    HTTPotion.get(@server <> path, [basic_auth: @auth, query: query_args])
+    HTTPotion.get(@api_host <> path, [headers: @headers, query: query_args])
     |> validate
   end
 
   def api_put(path, body) do
-    HTTPotion.put(@server <> path, [body: body, basic_auth: @auth])
+    HTTPotion.put(@api_host <> path, [body: Poison.encode(body), headers: @headers])
     |> validate
   end
+
   def api_post(path, body) do
-    HTTPotion.post(@server <> path, [body: body, basic_auth: @auth])
+    HTTPotion.post(@api_host <> path, [body: Poison.encode(body), headers: @headers])
     |> validate
+  end
+
+  def api_patch(path, body) do
+    HTTPotion.patch(@api_host <> path, [body: Poison.encode(body), headers: @headers])
+    |> validate
+  end
+
+  def api_delete(path) do
+    HTTPotion.delete(@api_host <> path, [headers: @headers])
   end
 
   def validate(response) do
