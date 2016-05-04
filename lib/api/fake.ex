@@ -30,8 +30,9 @@ defmodule Grafana.API.Fake do
   def api_get("/api/dashboards/home"), do: load("/dashboard.json")
   def api_get("/api/dashboards/tags"), do: load("/dashboard/tags.json")
   def api_get("/api/dashboards/db/" <> _), do: load("/dashboard/db.json")
-  def api_get("/api/search", _), do: load("/dashboard/search.json")
   def api_get(_), do: @default
+
+  def api_get("/api/search", _), do: load("/dashboard/search.json")
   def api_get(_, _), do: @default
 
   def api_post(_), do: @default
