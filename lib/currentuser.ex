@@ -26,11 +26,11 @@ defmodule Grafana.Currentuser do
   @doc """
   Star dashboard with given id for the current user.
   """
-  def star_dashboard(dashboard_id), do: api_post "#{@path}/stars/dashboard/#{@dashboard_id}"
+  def star_dashboard(dashboard_id), do: api_post "#{@path}/stars/dashboard/#{dashboard_id}"
 
   @doc """
   Unstar dashboard with given id for the current user.
   """
-  def unstar_dashboard(dashboard_id), do: api_delete "#{@path}/stars/dashboard/#{@dashboard_id}"
+  def unstar_dashboard(dashboard_id), do: api_delete "#{@path}/stars/dashboard/#{dashboard_id}"
 
 end

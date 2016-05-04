@@ -21,9 +21,8 @@
   3. Configure the environment variables in your config files:
      ```elixir
      config :grafana,
-       server: "<your grafana server>",
-       username: "<your username>",
-       password: "<your password>"
+       api_host: "<your grafana server url>",
+       api_key: "Bearer <your key>"
      ```
 
 ## Mocked mode

@@ -1,8 +1,5 @@
 defmodule GrafanaTest do
   use ExUnit.Case
-  doctest Grafana
-
-  test "the truth" do
-    assert 1 + 1 == 2
-  end
+  doctest Grafana.Datasource
+  doctest Grafana.Currentorg
 end

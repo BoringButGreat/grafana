@@ -6,5 +6,5 @@ defmodule Grafana.Login do
   @doc """
   Renew session based on remembered cookie.
   """
-  def renew, api_get @path
+  def renew, do: api_get @path
 end

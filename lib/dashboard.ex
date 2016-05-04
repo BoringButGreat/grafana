@@ -39,7 +39,7 @@ defmodule Grafana.Dashboard do
   @doc """
   Get dashboard from json file.
   """
-  def get_from_json(json), do api_get "/file/" <> Poison.encode(json)
+  def get_from_json(json), do: api_get "/file/" <> Poison.encode(json)
 
   @doc """
   Search dashboards with given parameters. "starred" is a boolean flag

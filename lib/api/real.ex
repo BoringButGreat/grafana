@@ -19,6 +19,11 @@ defmodule Grafana.API.Real do
     |> validate
   end
 
+  def api_post(path) do
+    HTTPotion.post(@api_host <> path, [headers: @headers])
+    |> validate
+  end
+
   def api_post(path, body) do
     HTTPotion.post(@api_host <> path, [body: Poison.encode(body), headers: @headers])
     |> validate

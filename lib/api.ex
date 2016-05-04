@@ -1,6 +1,6 @@
 defmodule Grafana.API do
   defmacro __using__(_) do
-    case Application.get_env(:grafana, :server) do
+    case Application.get_env(:grafana, :api_host) do
       "test" <> _ ->
         quote do
           import Grafana.API.Fake

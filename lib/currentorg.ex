@@ -1,10 +1,14 @@
-defmodule Grafana.CurrentOrg do
+defmodule Grafana.Currentorg do
   use Grafana.API
 
   @path "/api/org"
 
   @doc """
   Get the current organization.
+
+    iex> {:ok, org} = Grafana.Currentorg.get
+    ...> Map.keys(org)
+    ["address", "id", "name"]
   """
   def get, do: api_get @path
 
@@ -15,6 +19,10 @@ defmodule Grafana.CurrentOrg do
 
   @doc """
   Get all users within the current organization.
+
+    iex> {:ok, org_users} = Grafana.Currentorg.get_users
+    ...> Map.keys(hd(org_users))
+    ["email", "login", "orgId", "role", "userId"]
   """
   def get_users, do: api_get "#{@path}/users"
 
