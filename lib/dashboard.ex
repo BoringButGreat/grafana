@@ -5,6 +5,14 @@ defmodule Grafana.Dashboard do
 
   @doc """
   Get the home dashboard
+
+    iex> {:ok, dash} = Grafana.Dashboard.home
+    ...> Map.keys(dash)
+    ["dashboard", "meta"]
+
+    iex> {:ok, dash} = Grafana.Dashboard.get
+    ...> Map.keys(dash)
+    ["dashboard", "meta"]
   """
   def home, do: api_get "#{@path}/home"
   def get, do: home
@@ -12,6 +20,10 @@ defmodule Grafana.Dashboard do
   @doc """
   Get a dashboard with the given slug. Slug is the url-friendly version
   of the dashboard title.
+
+    iex> {:ok, dash} = Grafana.Dashboard.get "worldping-endpoint-dns"
+    ...> Map.keys(dash)
+    ["dashboard", "meta"]
   """
   def get(slug), do: api_get "#{@path}/db/#{slug}"
 
@@ -33,6 +45,10 @@ defmodule Grafana.Dashboard do
 
   @doc """
   Get all the available tags for dashboards.
+
+    iex> {:ok, tags} = Grafana.Dashboard.tags
+    ...> Map.keys(hd(tags))
+    ["count", "term"]
   """
   def tags, do: api_get "#{@path}/tags"
 
@@ -45,6 +61,10 @@ defmodule Grafana.Dashboard do
   Search dashboards with given parameters. "starred" is a boolean flag
   indicating whether only starred dashboards should be returned. "tagcloud"
   is a boolean indicating if a tagcloud should be returned.
+
+    iex> {:ok, search} = Grafana.Dashboard.search("", false, "Endpoints", false)
+    ...> Map.keys(hd(search))
+    ["id", "isStarred", "tags", "title", "type", "uri"]
   """
   def search(query, starred, tag, tagcloud) do
     api_get "/api/search", %{query: query, starred: starred, tag: tag, tagcloud: tagcloud}
