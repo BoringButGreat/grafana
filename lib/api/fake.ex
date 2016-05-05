@@ -1,7 +1,4 @@
 defmodule Grafana.API.Fake do
-  # @api_host Application.get_env(:grafana, :api_host)
-  # @api_key Application.get_env(:grafana, :api_key)
-  # @headers ["Authorization": @api_key]
   @default "Test not implemented"
 
   defp priv(path) do
@@ -40,8 +37,7 @@ defmodule Grafana.API.Fake do
   # directory structure of the test .json files.
   def api_get(path, _), do: load(path <> ".json")
 
-  def api_get(_, _), do: @default
-
+  # Other API function tests are not implemented.
   def api_post(_), do: @default
   def api_post(_, _), do: @default
   def api_put(_), do: @default
