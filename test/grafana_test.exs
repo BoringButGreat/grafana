@@ -3,4 +3,5 @@ defmodule GrafanaTest do
   doctest Grafana.Datasource
   doctest Grafana.Currentorg
   doctest Grafana.Dashboard
+  doctest Grafana.Frontend
 end

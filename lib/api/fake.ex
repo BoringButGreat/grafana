@@ -16,7 +16,9 @@ defmodule Grafana.API.Fake do
     do: Poison.decode(content)
   end
 
-  def api_get("/api/datasources"), do: load("/datasources.json")
+  # A few API get/1 calls don't follow the general structure; e.g calls that
+  # specify an ID at the end. Define special functions for them here.
+  def api_get("/api/dashboards/db/" <> _), do: load("/api/dashboards/db.json")
   def api_get("/api/datasources/" <> id) do
     with {:ok, datasources} <- api_get("/api/datasources") do
       {
@@ -25,14 +27,19 @@ defmodule Grafana.API.Fake do
       }
     end
   end
-  def api_get("/api/org"), do: load("/currentorg.json")
-  def api_get("/api/org/users"), do: load("/currentorg/users.json")
-  def api_get("/api/dashboards/home"), do: load("/dashboard.json")
-  def api_get("/api/dashboards/tags"), do: load("/dashboard/tags.json")
-  def api_get("/api/dashboards/db/" <> _), do: load("/dashboard/db.json")
-  def api_get(_), do: @default
 
-  def api_get("/api/search", _), do: load("/dashboard/search.json")
+  # All other get/1 calls follow a predictable enough pattern that we can
+  # just put test files in a directory structure that mimics the url structure
+  # of the API calls.
+  def api_get(path), do: load(path <> ".json")
+
+  # Follow the same convention for get/2 calls... define special ones here
+  # <TBD>
+
+  # All other get/2 calls follow a predictable patter that is reflected in the
+  # directory structure of the test .json files.
+  def api_get(path, _), do: load(path <> ".json")
+
   def api_get(_, _), do: @default
 
   def api_post(_), do: @default
@@ -41,6 +48,6 @@ defmodule Grafana.API.Fake do
   def api_put(_, _), do: @default
   def api_delete(_), do: @default
   def api_delete(_, _), do: @default
-  def api_patch(_), do: "test not implemented"
-  def api_patch(_, _), do: "test not implemented"
+  def api_patch(_), do: @default
+  def api_patch(_, _), do: @default
 end
