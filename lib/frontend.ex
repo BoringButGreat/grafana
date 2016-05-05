@@ -5,6 +5,11 @@ defmodule Grafana.Frontend do
 
   @doc """
   Get frontend settings.
+
+    iex> {:ok, front} = Grafana.Frontend.get
+    ...> Map.keys(front)
+    ["allowOrgCreate", "appSubUrl", "authProxyEnabled", "buildInfo", "datasources",
+     "defaultDatasource", "panels"]
   """
   def get, do: api_get @path
 end

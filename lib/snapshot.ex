@@ -9,11 +9,6 @@ defmodule Grafana.Snapshot do
   def new(json), do: api_post @path, json
 
   @doc """
-  Get all available snapshots.
-  """
-  def get, do: api_get @path
-
-  @doc """
   Get snapshot with given key.
   """
   def get(key), do: api_get "#{@path}/#{key}"
