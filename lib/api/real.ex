@@ -1,6 +1,9 @@
 defmodule Grafana.API.Real do
   @api_host Application.get_env(:grafana, :api_host)
   @api_key Application.get_env(:grafana, :api_key)
+  @username Application.get_env(:grafana, :username)
+  @password Application.get_env(:grafana, :password)
+
   @headers ["Authorization": @api_key]
 
   # Inside each individual API query, we can use a generic API call by sending the
@@ -36,6 +39,17 @@ defmodule Grafana.API.Real do
 
   def api_delete(path) do
     HTTPotion.delete(@api_host <> path, [headers: @headers])
+  end
+
+  def basic_auth_get(path) do
+    # HTTPotion.get("http://#{@username}:#{@password}@192.241.244.122:3000" <> path)
+    HTTPotion.get(@api_host <> path, [basic_auth: {"#{@username}", "#{@password}"}])
+    |> validate
+  end
+
+  def no_auth_get(path) do
+    HTTPotion.get(@api_host <> path)
+    |> validate
   end
 
   def validate(response) do

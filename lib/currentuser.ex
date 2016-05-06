@@ -6,7 +6,7 @@ defmodule Grafana.Currentuser do
   @doc """
   Get the actual current user.
   """
-  def get, do: api_get @path
+  def get, do: basic_auth_get @path
 
   @doc """
   Change password for the current user.
@@ -21,7 +21,7 @@ defmodule Grafana.Currentuser do
   @doc """
   Get all organizations for the current user.
   """
-  def orgs, do: api_get "#{@path}/orgs"
+  def orgs, do: basic_auth_get "#{@path}/orgs"
 
   @doc """
   Star dashboard with given id for the current user.

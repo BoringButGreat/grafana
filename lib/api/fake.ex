@@ -46,4 +46,5 @@ defmodule Grafana.API.Fake do
   def api_delete(_, _), do: @default
   def api_patch(_), do: @default
   def api_patch(_, _), do: @default
+  def basic_auth_get(_), do: @default
 end
