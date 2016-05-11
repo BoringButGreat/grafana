@@ -24,7 +24,6 @@ defmodule Grafana do
   end
 
   def get_cookie do
-    "grafana_sess=2772ebbce66d0dc6; Path=/; HttpOnly"
   end
 
   # def process_options(options) do
