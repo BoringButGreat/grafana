@@ -17,8 +17,9 @@ defmodule Grafana.API.Real do
     |> validate
   end
 
-  def api_put(path, body) do
-    HTTPotion.put(@api_host <> path, [body: Poison.encode(body), headers: @headers])
+  def api_put(path, map) do
+    {:ok, body} = Poison.encode(map)
+    HTTPotion.put(@api_host <> path, [body: body, headers: @headers])
     |> validate
   end
 
@@ -27,13 +28,15 @@ defmodule Grafana.API.Real do
     |> validate
   end
 
-  def api_post(path, body) do
-    HTTPotion.post(@api_host <> path, [body: Poison.encode(body), headers: @headers])
+  def api_post(path, map) do
+    {:ok, body} = Poison.encode(map)
+    HTTPotion.post(@api_host <> path, [body: body, headers: @headers])
     |> validate
   end
 
-  def api_patch(path, body) do
-    HTTPotion.patch(@api_host <> path, [body: Poison.encode(body), headers: @headers])
+  def api_patch(path, map) do
+    {:ok, body} = Poison.encode(map)
+    HTTPotion.patch(@api_host <> path, [body: body, headers: @headers])
     |> validate
   end
 
@@ -42,8 +45,12 @@ defmodule Grafana.API.Real do
   end
 
   def basic_auth_get(path) do
-    # HTTPotion.get("http://#{@username}:#{@password}@192.241.244.122:3000" <> path)
     HTTPotion.get(@api_host <> path, [basic_auth: {"#{@username}", "#{@password}"}])
+    |> validate
+  end
+
+  def basic_auth_get(path, query_args) do
+    HTTPotion.get(@api_host <> path, [headers: @headers, query: query_args])
     |> validate
   end
 
@@ -52,11 +59,37 @@ defmodule Grafana.API.Real do
     |> validate
   end
 
-  def validate(response) do
+  def no_auth_put(path, map) do
+    {:ok, body} = Poison.encode(map)
+    HTTPotion.put(@api_host <> path, [body: body])
+    |> validate
+  end
+
+  def no_auth_post(path, map) do
+    # HTTPotion.post(@api_host <> path, [body: Poison.encode(body)])
+    # |> validate
+    {:ok, body} = Poison.encode(map)
+    HTTPotion.post(@api_host <> path, [body: body])
+    |> validate
+  end
+
+  defp validate(response) do
     if HTTPotion.Response.success?(response) do
       Poison.decode(response.body)
     else
       {:error, "#{inspect(response)}"}
     end
+  end
+
+  defp content_type(response) do
+    response.headers.hdrs[:"content-type"]
+  end
+
+  defp image?(response) do
+    String.starts_with?(content_type(response), "image")
+  end
+
+  defp cookie?(response) do
+    Keyword.get(response.headers.hdrs, :"set-cookie")
   end
 end
