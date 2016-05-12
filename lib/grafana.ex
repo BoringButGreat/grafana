@@ -30,6 +30,10 @@ defmodule Grafana do
     %{cookie: cookie_jar, }
   end
 
+  def get_cookie, do: ""
+
+  def get_max_age(_), do: 604800
+
   def parse_cookie_list([]), do: ""
   def parse_cookie_list([head | tail]), do: "#{hd(String.split(head, "; "))};#{parse_cookie_list(tail)}"
   def parse_cookie_list(_), do: ""
