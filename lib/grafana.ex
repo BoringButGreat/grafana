@@ -25,7 +25,7 @@ defmodule Grafana do
   end
 
   def set_cookie(cookie) do
-    cookie_jar = parse_cookie_list(cookie)
+    cookie_jar = stringify_cookie_list(cookie)
     max_age = get_max_age(cookie)
     %{cookie: cookie_jar, }
   end
@@ -34,9 +34,10 @@ defmodule Grafana do
 
   def get_max_age(_), do: 604800
 
-  def parse_cookie_list([]), do: ""
-  def parse_cookie_list([head | tail]), do: "#{hd(String.split(head, "; "))};#{parse_cookie_list(tail)}"
-  def parse_cookie_list(_), do: ""
+  def stringify_cookie_list([]), do: ""
+  def stringify_cookie_list([head | []]), do: "#{head}"
+  def stringify_cookie_list([head | tail]), do: "#{head}; #{stringify_cookie_list(tail)}"
+  def stringify_cookie_list(_), do: ""
 
   def process_response_body(body) do
     {:ok, result} = body |> IO.iodata_to_binary |> Poison.decode
