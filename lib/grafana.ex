@@ -1,4 +1,4 @@
-defmodule Grafana do
+defmodule Grafana.Base do
   use Grafana.API
   use HTTPotion.Base
 
@@ -9,7 +9,7 @@ defmodule Grafana do
 
   @api_host Application.get_env(:grafana, :api_host)
   @api_key Application.get_env(:grafana, :api_key)
-  
+
   @doc """
   Prepend URL of API host, so that e.g. Grafana.post can be called with just a
   URL suffix: Grafana.post("/login") => HTTPotion.post("<api_host url>/login")
