@@ -8,6 +8,7 @@ defmodule Grafana do
   """
 
   @api_host Application.get_env(:grafana, :api_host)
+  @api_key Application.get_env(:grafana, :api_key)
   
   @doc """
   Prepend URL of API host, so that e.g. Grafana.post can be called with just a
