@@ -1,6 +1,6 @@
 # Grafana
 
-**TODO: Add description**
+**TODO: Add description of product**
 
 ## Installation
 
