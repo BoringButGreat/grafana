@@ -21,9 +21,17 @@ use Mix.Config
 #     config :logger, level: :info
 #
 if Mix.env == :test do
-  config :grafana, api_host: "test"
+  config :grafana,
+    api_host: "test",
+    api_key: "test",
+    username: "test",
+    password: "test"
 else
-  config :grafana, api_host: "http://docs.grafana.org/reference/http_api/"
+  config :grafana,
+    api_host: "http://docs.grafana.org/reference/http_api/",
+    api_key: "Bearer <YourKey>",
+    username: "username",
+    password: "password"
 end
 
 # It is also possible to import configuration files, relative to this

@@ -7,6 +7,8 @@ defmodule Grafana do
   embedding.
   """
 
+  @api_host Application.get_env(:grafana, :api_host)
+  
   @doc """
   Prepend URL of API host, so that e.g. Grafana.post can be called with just a
   URL suffix: Grafana.post("/login") => HTTPotion.post("<api_host url>/login")
