@@ -1,20 +1,25 @@
 defmodule Grafana.Base do
-  use HTTPotion.Base
-    @docmodule """
-    When used, it defines overridable functions that allow you to make custom
-    Grafana clients.
-    """
+  @docmodule """
+  When used, it defines overridable functions that allow you to make custom
+  Grafana clients.
+  """
 
-    @api_host Application.get_env(:grafana, :api_host)
-    @api_key Application.get_env(:grafana, :api_key)
+  defmacro __using__(_) do
+    quote do
+      use HTTPotion.Base
 
-    @doc """
-    Prepend URL of API host, so that e.g. Grafana.post can be called with just a
-    URL suffix: Grafana.post("/login") => HTTPotion.post("<api_host url>/login")
-    """
-    def process_url(suffix) do
-      @api_host <> suffix
+      @api_host Application.get_env(:grafana, :api_host)
+      @api_key Application.get_env(:grafana, :api_key)
+
+      @doc """
+      Prepend URL of API host, so that e.g. Grafana.post can be called with just a
+      URL suffix: Grafana.post("/login") => HTTPotion.post("<api_host url>/login")
+      """
+      def process_url(suffix) do
+        @api_host <> suffix
+      end
     end
+  end
 end
 
 defmodule Grafana do
