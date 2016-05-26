@@ -19,6 +19,16 @@ defmodule Grafana.Base do
         IO.inspect(suffix)
         @api_host <> suffix
       end
+
+      def process_request_headers(headers) do
+        headers
+      end
+
+      def process_response_body(body) do
+        {:ok, result} = body |> IO.iodata_to_binary |> Poison.decode
+        result |> Enum.map(fn ({key, val}) -> { String.to_atom(key), val } end)
+        |> :orddict.from_list
+      end
     end
   end
 end
