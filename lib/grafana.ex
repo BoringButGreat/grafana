@@ -16,6 +16,7 @@ defmodule Grafana.Base do
       URL suffix: Grafana.post("/login") => HTTPotion.post("<api_host url>/login")
       """
       def process_url(suffix) do
+        IO.inspect(suffix)
         @api_host <> suffix
       end
     end
