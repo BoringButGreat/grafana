@@ -16,18 +16,8 @@ defmodule Grafana.Base do
       URL suffix: Grafana.post("/login") => HTTPotion.post("<api_host url>/login")
       """
       def process_url(suffix) do
-        IO.inspect(suffix)
+        IO.inspect(@api_host <> suffix)
         @api_host <> suffix
-      end
-
-      def process_request_headers(headers) do
-        headers
-      end
-
-      def process_response_body(body) do
-        {:ok, result} = body |> IO.iodata_to_binary |> Poison.decode
-        result |> Enum.map(fn ({key, val}) -> { String.to_atom(key), val } end)
-        |> :orddict.from_list
       end
     end
   end
