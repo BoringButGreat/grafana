@@ -1,5 +1,6 @@
 defmodule Grafana.Dashboard do
   use Grafana.API
+  import Grafana
 
   @path "/api/dashboards"
 
@@ -68,5 +69,43 @@ defmodule Grafana.Dashboard do
   """
   def search(query, starred, tag, tagcloud) do
     api_get "/api/search", %{query: query, starred: starred, tag: tag, tagcloud: tagcloud}
+  end
+
+  @doc """
+  Format dashboard parameters into JSON.
+
+  Model:
+  {
+    "dashboard": {
+      "id": null,
+      "title": "Production Overview",
+      "tags": [ "templated" ],
+      "timezone": "browser",
+      "rows": [
+        {
+        }
+      ],
+      "schemaVersion": 6,
+      "version": 0
+    },
+    "overwrite": false
+  }
+  """
+  def params_to_json(id \\ "null", title \\ "new dashboard", tags \\ [], rows \\ [], overwrite \\ false)
+  def params_to_json(id, title, tags, rows, overwrite) do
+    %{
+      dashboard: %{
+        id: id,
+        title: title,
+        tags: tags,
+        timezone: "browser",
+        rows: rows,
+        schemaVersion: 6,
+        version: 0
+      },
+      overwrite: overwrite
+    }
+    |> Poison.encode
+    |> verify_json
   end
 end
