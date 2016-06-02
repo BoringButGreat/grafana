@@ -8,6 +8,11 @@ defmodule Grafana.API.Real do
 
   # Inside each individual API query, we can use a generic API call by sending the
   # appropriate arguments to the right path.
+  #
+  # NOTE: if you add a function here and call it elsewhere, you must add a
+  # corresponding function to fake.ex. This project will still compile if you
+  # don't, but "mix test" will fail - this will likely cause problems for
+  # someone else who is using the Grafana API in their project.
   def api_get(path) do
     HTTPotion.get(@api_host <> path, [headers: @headers])
     |> validate
