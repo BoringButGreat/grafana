@@ -1,5 +1,6 @@
 defmodule Grafana.Admin do
   use Grafana.API
+  import Grafana
 
   @path "/api/admin"
 
@@ -27,4 +28,28 @@ defmodule Grafana.Admin do
   Delete global user with given id.
   """
   def delete_user(id), do: api_delete "#{@path}/users/#{id}"
+
+  @doc """
+  Format user parameters into JSON.
+
+  Model:
+  {
+    "name":"User",
+    "email":"user@graf.com",
+    "login":"user",
+    "password":"userpassword"
+  }
+  """
+  def user_params_to_json(name \\ "", email \\ "", login \\ "user", password \\ "password")
+  def user_params_to_json(name, email, login, password) do
+    %{
+      name: name,
+      email: email,
+      login: login,
+      password: password
+    }
+    |> Poison.encode
+    |> verify_json
+  end
+
 end

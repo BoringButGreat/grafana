@@ -22,5 +22,4 @@ defmodule Grafana.Users do
   Get all organizations associated with given user id.
   """
   def orgs(id), do: api_get "#{@path}/#{id}/orgs"
-
 end
