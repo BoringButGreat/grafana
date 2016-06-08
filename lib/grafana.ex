@@ -13,7 +13,7 @@ defmodule Grafana.Base do
 
       @doc """
       Prepend URL of API host, so that e.g. Grafana.post can be called with just a
-      URL suffix: Grafana.post("/login") => HTTPotion.post("<api_host url>/login")
+      URL suffix: Grafana.post("/login") => HTTPotion.post("<api_host url>/login") 
       """
       def process_url(suffix) do
         IO.inspect(@api_host <> suffix)

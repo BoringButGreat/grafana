@@ -4,7 +4,7 @@ defmodule Grafana.Users do
   @path "/api/users"
 
   @doc """
-  Get all available users.
+  Get all users.
   """
   def get, do: api_get @path
 
