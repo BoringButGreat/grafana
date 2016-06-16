@@ -13,4 +13,9 @@ defmodule Grafana.Panel.Embed do
     src = build_src uri, panel_id
     "<iframe src=\"#{src}\" width=\"#{width}\" height=\"#{height}\" frameborder=\"#{border}\"></iframe>"
   end
+
+  def model(uri, panel_id, width, height, border) do
+    src = build_src uri, panel_id
+    %{src: src, width: width, height: height, frameborder: border}
+  end
 end
