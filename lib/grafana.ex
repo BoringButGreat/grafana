@@ -1,9 +1,4 @@
 defmodule Grafana.Base do
-  @docmodule """
-  When used, it defines overridable functions that allow you to make custom
-  Grafana clients.
-  """
-
   defmacro __using__(_) do
     quote do
       use HTTPotion.Base
