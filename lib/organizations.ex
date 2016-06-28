@@ -1,5 +1,6 @@
 defmodule Grafana.Organizations do
   use Grafana.API
+  import Grafana
 
   @path "/api/orgs"
 
