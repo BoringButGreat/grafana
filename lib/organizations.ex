@@ -14,6 +14,11 @@ defmodule Grafana.Organizations do
   def get(id), do: api_get "#{@path}/#{id}"
 
   @doc """
+  Create an organization
+  """
+  def create(json), do: api_post "#{@path}", json
+
+  @doc """
   Update organization with id, as specified by json.
   """
   def update(id, json), do: api_put "#{@path}/#{id}", json
@@ -37,4 +42,12 @@ defmodule Grafana.Organizations do
   Delete given user inside given organization.
   """
   def delete_user(org_id, user_id), do: api_delete "#{@path}/#{org_id}/users/#{user_id}"
+
+  def org_params_to_json(name) do
+    %{
+      name: name
+    }
+    |> Poison.encode
+    |> verify_json
+  end
 end
