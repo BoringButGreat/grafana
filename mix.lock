@@ -1,3 +1,3 @@
-%{"httpotion": {:hex, :httpotion, "2.2.2"},
-  "ibrowse": {:hex, :ibrowse, "4.2.2"},
-  "poison": {:hex, :poison, "2.1.0"}}
+%{"httpotion": {:git, "https://github.com/myfreeweb/httpotion.git", "c31c3a9e3597a0092a25454084db88c3b4bb28a0", []},
+  "ibrowse": {:hex, :ibrowse, "4.2.2", "b32b5bafcc77b7277eff030ed32e1acc3f610c64e9f6aea19822abcadf681b4b", [:rebar3], []},
+  "poison": {:hex, :poison, "2.1.0", "f583218ced822675e484648fa26c933d621373f01c6c76bd00005d7bd4b82e27", [:mix], []}}
