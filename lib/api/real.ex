@@ -86,15 +86,15 @@ defmodule Grafana.API.Real do
     end
   end
 
-  defp content_type(response) do
+  def content_type(response) do
     response.headers.hdrs[:"content-type"]
   end
 
-  defp image?(response) do
+  def image?(response) do
     String.starts_with?(content_type(response), "image")
   end
 
-  defp cookie?(response) do
+  def cookie?(response) do
     Keyword.get(response.headers.hdrs, :"set-cookie")
   end
 end
