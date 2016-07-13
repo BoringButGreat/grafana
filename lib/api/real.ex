@@ -1,10 +1,10 @@
 defmodule Grafana.API.Real do
-  @api_host Application.get_env(:grafana, :api_host)
-  @api_key Application.get_env(:grafana, :api_key)
-  @username Application.get_env(:grafana, :username)
-  @password Application.get_env(:grafana, :password)
+  defp api_host, do: Application.get_env(:grafana, :api_host)
+  defp api_key, do: Application.get_env(:grafana, :api_key)
+  defp username, do: Application.get_env(:grafana, :username)
+  defp password, do: Application.get_env(:grafana, :password)
 
-  @headers ["Authorization": @api_key]
+  defp headers, do: ["Authorization": api_key]
 
   # Inside each individual API query, we can use a generic API call by sending the
   # appropriate arguments to the right path.
@@ -14,67 +14,67 @@ defmodule Grafana.API.Real do
   # don't, but "mix test" will fail - this will likely cause problems for
   # someone else who is using the Grafana API in their project.
   def api_get(path) do
-    HTTPotion.get(@api_host <> path, [headers: @headers])
+    HTTPotion.get(api_host <> path, [headers: headers])
     |> validate
   end
   def api_get(path, query_args) do
-    HTTPotion.get(@api_host <> path, [headers: @headers, query: query_args])
+    HTTPotion.get(api_host <> path, [headers: headers, query: query_args])
     |> validate
   end
 
   def api_put(path, map) do
     {:ok, body} = Poison.encode(map)
-    HTTPotion.put(@api_host <> path, [body: body, headers: @headers])
+    HTTPotion.put(api_host <> path, [body: body, headers: headers])
     |> validate
   end
 
   def api_post(path) do
-    HTTPotion.post(@api_host <> path, [headers: @headers])
+    HTTPotion.post(api_host <> path, [headers: headers])
     |> validate
   end
 
   def api_post(path, map) do
     {:ok, body} = Poison.encode(map)
-    HTTPotion.post(@api_host <> path, [body: body, headers: @headers])
+    HTTPotion.post(api_host <> path, [body: body, headers: headers])
     |> validate
   end
 
   def api_patch(path, map) do
     {:ok, body} = Poison.encode(map)
-    HTTPotion.patch(@api_host <> path, [body: body, headers: @headers])
+    HTTPotion.patch(api_host <> path, [body: body, headers: headers])
     |> validate
   end
 
   def api_delete(path) do
-    HTTPotion.delete(@api_host <> path, [headers: @headers])
+    HTTPotion.delete(api_host <> path, [headers: headers])
   end
 
   def basic_auth_get(path) do
-    HTTPotion.get(@api_host <> path, [basic_auth: {"#{@username}", "#{@password}"}])
+    HTTPotion.get(api_host <> path, [basic_auth: {"#{username}", "#{password}"}])
     |> validate
   end
 
   def basic_auth_get(path, query_args) do
-    HTTPotion.get(@api_host <> path, [headers: @headers, query: query_args])
+    HTTPotion.get(api_host <> path, [headers: headers, query: query_args])
     |> validate
   end
 
   def no_auth_get(path) do
-    HTTPotion.get(@api_host <> path)
+    HTTPotion.get(api_host <> path)
     |> validate
   end
 
   def no_auth_put(path, map) do
     {:ok, body} = Poison.encode(map)
-    HTTPotion.put(@api_host <> path, [body: body])
+    HTTPotion.put(api_host <> path, [body: body])
     |> validate
   end
 
   def no_auth_post(path, map) do
-    # HTTPotion.post(@api_host <> path, [body: Poison.encode(body)])
+    # HTTPotion.post(api_host <> path, [body: Poison.encode(body)])
     # |> validate
     {:ok, body} = Poison.encode(map)
-    HTTPotion.post(@api_host <> path, [body: body])
+    HTTPotion.post(api_host <> path, [body: body])
     |> validate
   end
 
