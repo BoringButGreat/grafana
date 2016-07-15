@@ -37,13 +37,14 @@ defmodule Grafana.API.Fake do
   # directory structure of the test .json files.
   def api_get(path, _), do: load(path <> ".json")
 
+  def api_delete(path), do: {:ok, "TEST: delete #{path}"}
+  def api_delete(path, args), do: {:ok, "TEST: delete #{path} with args #{inspect args}"}
+
   # Other API function tests are not implemented.
   def api_post(_), do: @default
   def api_post(_, _), do: @default
   def api_put(_), do: @default
   def api_put(_, _), do: @default
-  def api_delete(_), do: @default
-  def api_delete(_, _), do: @default
   def api_patch(_), do: @default
   def api_patch(_, _), do: @default
   def basic_auth_get(_), do: @default
