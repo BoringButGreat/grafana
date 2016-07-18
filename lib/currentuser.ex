@@ -23,9 +23,6 @@ defmodule Grafana.Currentuser do
   def switch_context(org_id), do: api_post "#{@path}/using/#{org_id}"
 
   @doc """
-  Get all organizations for the current user.
-  """
-  @doc """
   Get orgs for the actual current user.
 
     iex> {:ok, orgs} = Grafana.Currentuser.orgs
