@@ -43,14 +43,15 @@ defmodule Grafana.API.Fake do
   def basic_auth_get(path), do: load(path <> ".json")
   def no_auth_get(path), do: load(path <> ".json")
 
+  def api_post(path), do: load("/post" <> path <> ".json")
+  def api_post(path, _), do: load("/post" <> path <> ".json")
+  def no_auth_post(path, _), do: load("/post" <> path <> ".json")
+
   # Other API function tests are not implemented.
-  def api_post(_), do: @default
-  def api_post(_, _), do: @default
   def api_put(_), do: @default
   def api_put(_, _), do: @default
   def api_patch(_), do: @default
   def api_patch(_, _), do: @default
-  def no_auth_post(_, _), do: @default
   def no_auth_put(_), do: @default
   def no_auth_put(_, _), do: @default
 end

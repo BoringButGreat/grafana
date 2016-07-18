@@ -30,6 +30,10 @@ defmodule Grafana.Dashboard do
 
   @doc """
   Update an existing dashboard as specified in json.
+
+    iex> {:ok, dash} = Grafana.Dashboard.update(%{})
+    ...> Map.keys(dash)
+    ["slug", "status", "version"]
   """
   def update(json), do: api_post "#{@path}/db", json
 
