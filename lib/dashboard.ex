@@ -91,8 +91,8 @@ defmodule Grafana.Dashboard do
     "overwrite": false
   }
   """
-  def params_to_json(id \\ "null", title \\ "new dashboard", tags \\ [], rows \\ [], overwrite \\ false)
-  def params_to_json(id, title, tags, rows, overwrite) do
+  def params_to_json(id \\ "null", title \\ "new dashboard", tags \\ [], rows \\ [], overwrite \\ false, version \\ 0)
+  def params_to_json(id, title, tags, rows, overwrite, version) do
     %{
       dashboard: %{
         id: id,
@@ -101,7 +101,7 @@ defmodule Grafana.Dashboard do
         timezone: "browser",
         rows: rows,
         schemaVersion: 6,
-        version: 0
+        version: version
       },
       overwrite: overwrite
     }
