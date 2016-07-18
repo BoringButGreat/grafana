@@ -5,6 +5,10 @@ defmodule Grafana.Currentuser do
 
   @doc """
   Get the actual current user.
+
+    iex> {:ok, user} = Grafana.Currentuser.get
+    ...> Map.keys(user)
+    ["email", "isGrafanaAdmin", "login", "name", "orgId", "theme"]
   """
   def get, do: basic_auth_get @path
 
@@ -20,6 +24,13 @@ defmodule Grafana.Currentuser do
 
   @doc """
   Get all organizations for the current user.
+  """
+  @doc """
+  Get orgs for the actual current user.
+
+    iex> {:ok, orgs} = Grafana.Currentuser.orgs
+    ...> Map.keys(hd(orgs))
+    ["name", "orgId", "role"]
   """
   def orgs, do: basic_auth_get "#{@path}/orgs"
 

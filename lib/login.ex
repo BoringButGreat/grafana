@@ -9,8 +9,13 @@ defmodule Grafana.Login do
   end
 
   @doc """
-  Renew session based on remembered cookie.
+  Renew login.
+
+    iex> {:ok, response} = Grafana.Login.renew
+    ...> Map.keys(response)
+    ["message"]
   """
   def renew, do: basic_auth_get "/api/login/ping"
+
   def check, do: no_auth_get "/api/login/ping"
 end

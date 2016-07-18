@@ -4,4 +4,6 @@ defmodule GrafanaTest do
   doctest Grafana.Currentorg
   doctest Grafana.Dashboard
   doctest Grafana.Frontend
+  doctest Grafana.Login
+  doctest Grafana.Currentuser
 end
