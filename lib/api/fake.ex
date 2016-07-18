@@ -41,6 +41,7 @@ defmodule Grafana.API.Fake do
   def api_delete(path, args), do: {:ok, "TEST: delete #{path} with args #{inspect args}"}
 
   def basic_auth_get(path), do: load(path <> ".json")
+  def no_auth_get(path), do: load(path <> ".json")
 
   # Other API function tests are not implemented.
   def api_post(_), do: @default
@@ -49,7 +50,6 @@ defmodule Grafana.API.Fake do
   def api_put(_, _), do: @default
   def api_patch(_), do: @default
   def api_patch(_, _), do: @default
-  def no_auth_get(_), do: @default
   def no_auth_post(_, _), do: @default
   def no_auth_put(_), do: @default
   def no_auth_put(_, _), do: @default

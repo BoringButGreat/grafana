@@ -9,7 +9,7 @@ defmodule Grafana.Login do
   end
 
   @doc """
-  Renew login.
+  Renew login with basic auth.
 
     iex> {:ok, response} = Grafana.Login.renew
     ...> Map.keys(response)
@@ -17,5 +17,12 @@ defmodule Grafana.Login do
   """
   def renew, do: basic_auth_get "/api/login/ping"
 
+  @doc """
+  Check login without authentication.
+
+    iex> {:ok, response} = Grafana.Login.check
+    ...> Map.keys(response)
+    ["message"]
+  """
   def check, do: no_auth_get "/api/login/ping"
 end
