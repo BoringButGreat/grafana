@@ -103,7 +103,7 @@ defmodule Grafana.Dashboard do
     overwrite \\ false,
     version \\ 0,
     editable \\ false,
-    style \\ "dark"
+    style \\ "light"
   )
   def params_to_json(id, title, tags, rows, overwrite, version, editable, style) do
     %{
