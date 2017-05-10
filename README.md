@@ -7,7 +7,7 @@
   1. Add grafana to your list of dependencies in `mix.exs`:
      ```elixir
      def deps do
-       [{:grafana, "~> 0.0.1", github: "boringbutgreat/grafana"}]
+       [{:grafana, "~> 0.0.1", github: "tagip/grafana"}]
      end
      ```
 
