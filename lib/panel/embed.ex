@@ -6,7 +6,7 @@ defmodule Grafana.Panel.Embed do
   # model
   # <iframe src="http://xxx.xxx.xxx.xxx:3000/dashboard-solo/db/worldping-endpoint-ping?panel_id=1" width="450" height="200" frameborder="0"></iframe>
   defp build_src(uri, panel_id) do
-    "#{api_host}/dashboard-solo/db/#{uri}?panelId=#{panel_id}"
+    "#{api_host()}/dashboard-solo/db/#{uri}?panelId=#{panel_id}"
   end
 
   def get_html(uri, panel_id, width, height, border) do
