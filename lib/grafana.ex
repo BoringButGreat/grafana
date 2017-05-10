@@ -1,5 +1,5 @@
 defmodule Grafana.Base do
-  @docmodule """
+  @moduledoc """
   When used, it defines overridable functions that allow you to make custom
   Grafana clients.
   """
@@ -14,7 +14,7 @@ end
 defmodule Grafana do
   use Grafana.Base
 
-  @docmodule """
+  @moduledoc """
   Tools for getting data from the Grafana API as well as chart objects for
   embedding.
   """

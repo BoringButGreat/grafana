@@ -16,7 +16,7 @@ defmodule Grafana.Dashboard do
     ["dashboard", "meta"]
   """
   def home, do: api_get "#{@path}/home"
-  def get, do: home
+  def get, do: home()
 
   @doc """
   Get a dashboard with the given slug. Slug is the url-friendly version
