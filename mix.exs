@@ -29,7 +29,7 @@ defmodule Grafana.Mixfile do
   defp deps do
     [
       {:httpotion, "~> 3.0.2", github: "myfreeweb/httpotion"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 2.0"}
     ]
   end
 end
