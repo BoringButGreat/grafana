@@ -5,11 +5,19 @@ defmodule Grafana.Snapshot do
 
   @doc """
   Create a new snapshot as specified by json.
+
+    iex> {:ok, result} = Grafana.Snapshot.new(%{"dashboard" => %{}, "expires" => 3600})
+    ...> Map.keys(result)
+    ["deleteKey","deleteUrl","key","url"]
   """
   def new(json), do: api_post @path, json
 
   @doc """
   Get snapshot with given key.
+
+    iex> {:ok, result} = Grafana.Snapshot.get("my_key")
+    ...> Map.keys(result)
+    ["dashboard","meta"]
   """
   def get(key), do: api_get "#{@path}/#{key}"
 
