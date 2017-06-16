@@ -24,6 +24,10 @@ defmodule Grafana.Snapshot do
   @doc """
   Delete snapshot with given DeleteKey. The DeleteKey is returned when the
   snapshot is created.
+
+    iex> {:ok, result} = Grafana.Snapshot.delete("delete_key")
+    ...> Map.keys(result)
+    ["message"]
   """
   def delete(deletekey), do: api_get "#{@path}-delete/#{deletekey}"
 
