@@ -26,4 +26,9 @@ defmodule Grafana.Snapshot do
   snapshot is created.
   """
   def delete(deletekey), do: api_get "#{@path}-delete/#{deletekey}"
+
+  @doc """
+  Build snapshot URL from given key.
+  """
+  def url_from_key(key), do: "#{Application.get_env(:grafana, :api_host)}/dashboard/snapshot/#{key}"
 end
