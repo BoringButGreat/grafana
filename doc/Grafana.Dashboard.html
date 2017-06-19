@@ -1,0 +1,446 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.16.1">
+    <title>Grafana.Dashboard – grafana v0.0.1</title>
+    <link rel="stylesheet" href="dist/app-4ecae1abb8.css" />
+    
+    <script src="dist/sidebar_items-ae61dd011e.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+    <div class="main">
+<button class="sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="api-reference.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        grafana
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+    
+  </a>
+
+  <div class="sidebar-search">
+    <span class="icon-search" aria-hidden="true"></span>
+    <input type="text" class="sidebar-searchInput" placeholder="search" aria-label="Search" autocomplete="off" />
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">grafana v0.0.1</small>
+        Grafana.Dashboard
+        
+      </h1>
+
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete/1">delete(slug)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Delete an existing dashboard with the given slug. Slug is the url-friendly
+version of the dashboard title</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get/0">get()</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get/1">get(slug)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Get a dashboard with the given slug. Slug is the url-friendly version
+of the dashboard title</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_from_json/1">get_from_json(json)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Get dashboard from json file</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#home/0">home()</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Get the home dashboard</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#new/1">new(json)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Create a new dashboard specified by json</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#params_to_json/8">params_to_json(id \\ &quot;null&quot;, title \\ &quot;new dashboard&quot;, tags \\ [], rows \\ [], overwrite \\ false, version \\ 0, editable \\ false, style \\ &quot;light&quot;)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Format dashboard parameters into JSON</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search/4">search(query, starred, tag, tagcloud)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Search dashboards with given parameters. “starred” is a boolean flag
+indicating whether only starred dashboards should be returned. “tagcloud”
+is a boolean indicating if a tagcloud should be returned</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tags/0">tags()</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Get all the available tags for dashboards</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update/1">update(json)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Update an existing dashboard as specified in json</p>
+</div>
+  
+</div>
+
+  </div>
+
+
+          
+
+        </section>
+      
+
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="delete/1">
+  
+  <div class="detail-header">
+    <a href="#delete/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">delete(slug)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Delete an existing dashboard with the given slug. Slug is the url-friendly
+version of the dashboard title.</p>
+
+  </section>
+</div>
+<div class="detail" id="get/0">
+  
+  <div class="detail-header">
+    <a href="#get/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get()</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="get/1">
+  
+  <div class="detail-header">
+    <a href="#get/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get(slug)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Get a dashboard with the given slug. Slug is the url-friendly version
+of the dashboard title.</p>
+<p>  iex&gt; {:ok, dash} = Grafana.Dashboard.get “worldping-endpoint-dns”
+  …&gt; Map.keys(dash)
+  [“dashboard”, “meta”]</p>
+
+  </section>
+</div>
+<div class="detail" id="get_from_json/1">
+  
+  <div class="detail-header">
+    <a href="#get_from_json/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_from_json(json)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Get dashboard from json file.</p>
+
+  </section>
+</div>
+<div class="detail" id="home/0">
+  
+  <div class="detail-header">
+    <a href="#home/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">home()</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Get the home dashboard</p>
+<p>  iex&gt; {:ok, dash} = Grafana.Dashboard.home
+  …&gt; Map.keys(dash)
+  [“dashboard”, “meta”]</p>
+<p>  iex&gt; {:ok, dash} = Grafana.Dashboard.get
+  …&gt; Map.keys(dash)
+  [“dashboard”, “meta”]</p>
+
+  </section>
+</div>
+<div class="detail" id="new/1">
+  
+  <div class="detail-header">
+    <a href="#new/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">new(json)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Create a new dashboard specified by json.</p>
+
+  </section>
+</div>
+<div class="detail" id="params_to_json/8">
+  
+    <span id="params_to_json/0"></span>
+  
+    <span id="params_to_json/1"></span>
+  
+    <span id="params_to_json/2"></span>
+  
+    <span id="params_to_json/3"></span>
+  
+    <span id="params_to_json/4"></span>
+  
+    <span id="params_to_json/5"></span>
+  
+    <span id="params_to_json/6"></span>
+  
+    <span id="params_to_json/7"></span>
+  
+  <div class="detail-header">
+    <a href="#params_to_json/8" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">params_to_json(id \\ &quot;null&quot;, title \\ &quot;new dashboard&quot;, tags \\ [], rows \\ [], overwrite \\ false, version \\ 0, editable \\ false, style \\ &quot;light&quot;)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Format dashboard parameters into JSON.</p>
+<p>Model:
+{
+  “dashboard”: {</p>
+<pre><code class="elixir">&quot;id&quot;: null,
+&quot;title&quot;: &quot;Production Overview&quot;,
+&quot;tags&quot;: [ &quot;templated&quot; ],
+&quot;timezone&quot;: &quot;browser&quot;,
+&quot;rows&quot;: [
+  {
+  }
+],
+&quot;schemaVersion&quot;: 6,
+&quot;version&quot;: 0</code></pre>
+<p>  },
+  “overwrite”: false
+}</p>
+
+  </section>
+</div>
+<div class="detail" id="search/4">
+  
+  <div class="detail-header">
+    <a href="#search/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">search(query, starred, tag, tagcloud)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Search dashboards with given parameters. “starred” is a boolean flag
+indicating whether only starred dashboards should be returned. “tagcloud”
+is a boolean indicating if a tagcloud should be returned.</p>
+<p>  iex&gt; {:ok, search} = Grafana.Dashboard.search(“”, false, “Endpoints”, false)
+  …&gt; Map.keys(hd(search))
+  [“id”, “isStarred”, “tags”, “title”, “type”, “uri”]</p>
+
+  </section>
+</div>
+<div class="detail" id="tags/0">
+  
+  <div class="detail-header">
+    <a href="#tags/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">tags()</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Get all the available tags for dashboards.</p>
+<p>  iex&gt; {:ok, tags} = Grafana.Dashboard.tags
+  …&gt; Map.keys(hd(tags))
+  [“count”, “term”]</p>
+
+  </section>
+</div>
+<div class="detail" id="update/1">
+  
+  <div class="detail-header">
+    <a href="#update/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">update(json)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Update an existing dashboard as specified in json.</p>
+<p>  iex&gt; {:ok, dash} = Grafana.Dashboard.update(%{})
+  …&gt; Map.keys(dash)
+  [“slug”, “status”, “version”]</p>
+
+  </section>
+</div>
+
+        </section>
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.1),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-126b5f0e90.js"></script>
+  </body>
+</html>
+

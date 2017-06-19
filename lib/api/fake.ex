@@ -1,4 +1,6 @@
 defmodule Grafana.API.Fake do
+  @moduledoc false
+
   @default "Test not implemented"
 
   defp priv(path) do
