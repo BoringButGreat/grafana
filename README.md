@@ -1,6 +1,6 @@
 # Grafana
 
-**TODO: Add description of product**
+Elixir tools for accessing the Grafana API (see http://docs.grafana.org/http_api/).
 
 ## Installation
 
@@ -25,7 +25,7 @@
        api_key: "Bearer <your key>"
      ```
 
-## Mocked mode
+## Mocked mode for simulating API calls in your application's test scripts
   ```elixir
-  config :worldping, api_host: "test"
+  config :grafana, api_host: "test"
   ```
