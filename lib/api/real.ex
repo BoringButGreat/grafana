@@ -1,4 +1,6 @@
 defmodule Grafana.API.Real do
+  @moduledoc false
+
   defp api_host, do: Application.get_env(:grafana, :api_host)
   defp api_key, do: Application.get_env(:grafana, :api_key)
   defp username, do: Application.get_env(:grafana, :username)

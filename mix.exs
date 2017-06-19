@@ -4,7 +4,7 @@ defmodule Grafana.Mixfile do
   def project do
     [app: :grafana,
      version: "0.0.1",
-     elixir: "~> 1.3",
+     elixir: "> 1.3.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -14,7 +14,7 @@ defmodule Grafana.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :httpotion, :poison]]
+    [applications: [:ex_doc, :logger, :httpotion, :poison]]
   end
 
   # Dependencies can be Hex packages:
@@ -28,6 +28,7 @@ defmodule Grafana.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
+      {:ex_doc, "> 0.14.0"},
       {:httpotion, "~> 3.0.2", github: "myfreeweb/httpotion"},
       {:poison, "~> 2.0"}
     ]

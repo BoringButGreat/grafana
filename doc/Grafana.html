@@ -1,0 +1,1128 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.16.1">
+    <title>Grafana – grafana v0.0.1</title>
+    <link rel="stylesheet" href="dist/app-4ecae1abb8.css" />
+    
+    <script src="dist/sidebar_items-ae61dd011e.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+    <div class="main">
+<button class="sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="api-reference.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        grafana
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+    
+  </a>
+
+  <div class="sidebar-search">
+    <span class="icon-search" aria-hidden="true"></span>
+    <input type="text" class="sidebar-searchInput" placeholder="search" aria-label="Search" autocomplete="off" />
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">grafana v0.0.1</small>
+        Grafana
+        
+      </h1>
+
+      
+        <section id="moduledoc">
+          <p>Tools for getting data from the Grafana API as well as chart objects for
+embedding.</p>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete/2">delete(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request(:delete, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete!/2">delete!(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request!(:delete, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get/2">get(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request(:get, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get!/2">get!(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request!(:get, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#handle_response/1">handle_response(response)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#head/2">head(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request(:head, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#head!/2">head!(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request!(:head, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#is_redirect/1">is_redirect(response)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#options/2">options(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request(:options, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#options!/2">options!(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request!(:options, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#patch/2">patch(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request(:patch, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#patch!/2">patch!(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request!(:patch, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#post/2">post(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request(:post, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#post!/2">post!(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request!(:post, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process_options/1">process_options(options)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process_request_body/1">process_request_body(body)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process_request_headers/1">process_request_headers(headers)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process_response_body/1">process_response_body(body)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process_response_chunk/1">process_response_chunk(raw)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process_response_headers/1">process_response_headers(headers)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process_response_location/1">process_response_location(response)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process_status_code/1">process_status_code(status_code)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process_url/1">process_url(url)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process_url/2">process_url(url, options)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put/2">put(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request(:put, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put!/2">put!(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A shortcut for <code class="inline">request!(:put, url, options)</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#request/3">request(method, url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Sends an HTTP request</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#request/5">request(method, url, body, headers, options)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Deprecated form of <code class="inline">request</code>; body and headers are now options, see <a href="#request/3"><code class="inline">request/3</code></a></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#request!/3">request!(method, url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Like <code class="inline">request</code>, but raises  <a href="https://hexdocs.pm/httpotion/3.0.2/HTTPotion.HTTPError.html"><code class="inline">HTTPotion.HTTPError</code></a> if failed</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#request_direct/6">request_direct(conn_pid, method, url, body \\ &quot;&quot;, headers \\ [], options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Deprecated form of <code class="inline">request</code> with the <code class="inline">direct</code> option; body and headers are now options, see <a href="#request/3"><code class="inline">request/3</code></a></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#response_ok/1">response_ok(response)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#spawn_link_worker_process/2">spawn_link_worker_process(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Starts a linked worker process for use with the <code class="inline">direct</code> option</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#spawn_worker_process/2">spawn_worker_process(url, options \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Starts a worker process for use with the <code class="inline">direct</code> option</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start/0">start()</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Ensures that HTTPotion and its dependencies are started</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_worker_process/1">stop_worker_process(pid)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Stops a worker process started with <a href="#spawn_worker_process/2"><code class="inline">spawn_worker_process/2</code></a> or <a href="#spawn_link_worker_process/2"><code class="inline">spawn_link_worker_process/2</code></a></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#transformer/4">transformer(target, method, url, options)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#verify_json/1">verify_json(arg)</a>
+  </div>
+  
+</div>
+
+  </div>
+
+
+          
+
+        </section>
+      
+
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="delete/2">
+  
+    <span id="delete/1"></span>
+  
+  <div class="detail-header">
+    <a href="#delete/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">delete(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request(:delete, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="delete!/2">
+  
+    <span id="delete!/1"></span>
+  
+  <div class="detail-header">
+    <a href="#delete!/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">delete!(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request!(:delete, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="get/2">
+  
+    <span id="get/1"></span>
+  
+  <div class="detail-header">
+    <a href="#get/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request(:get, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="get!/2">
+  
+    <span id="get!/1"></span>
+  
+  <div class="detail-header">
+    <a href="#get!/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get!(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request!(:get, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="handle_response/1">
+  
+  <div class="detail-header">
+    <a href="#handle_response/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">handle_response(response)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="head/2">
+  
+    <span id="head/1"></span>
+  
+  <div class="detail-header">
+    <a href="#head/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">head(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request(:head, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="head!/2">
+  
+    <span id="head!/1"></span>
+  
+  <div class="detail-header">
+    <a href="#head!/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">head!(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request!(:head, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="is_redirect/1">
+  
+  <div class="detail-header">
+    <a href="#is_redirect/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">is_redirect(response)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="options/2">
+  
+    <span id="options/1"></span>
+  
+  <div class="detail-header">
+    <a href="#options/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">options(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request(:options, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="options!/2">
+  
+    <span id="options!/1"></span>
+  
+  <div class="detail-header">
+    <a href="#options!/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">options!(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request!(:options, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="patch/2">
+  
+    <span id="patch/1"></span>
+  
+  <div class="detail-header">
+    <a href="#patch/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">patch(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request(:patch, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="patch!/2">
+  
+    <span id="patch!/1"></span>
+  
+  <div class="detail-header">
+    <a href="#patch!/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">patch!(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request!(:patch, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="post/2">
+  
+    <span id="post/1"></span>
+  
+  <div class="detail-header">
+    <a href="#post/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">post(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request(:post, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="post!/2">
+  
+    <span id="post!/1"></span>
+  
+  <div class="detail-header">
+    <a href="#post!/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">post!(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request!(:post, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="process_options/1">
+  
+  <div class="detail-header">
+    <a href="#process_options/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">process_options(options)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="process_request_body/1">
+  
+  <div class="detail-header">
+    <a href="#process_request_body/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">process_request_body(body)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="process_request_headers/1">
+  
+  <div class="detail-header">
+    <a href="#process_request_headers/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">process_request_headers(headers)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="process_response_body/1">
+  
+  <div class="detail-header">
+    <a href="#process_response_body/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">process_response_body(body)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="process_response_chunk/1">
+  
+  <div class="detail-header">
+    <a href="#process_response_chunk/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">process_response_chunk(raw)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="process_response_headers/1">
+  
+  <div class="detail-header">
+    <a href="#process_response_headers/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">process_response_headers(headers)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="process_response_location/1">
+  
+  <div class="detail-header">
+    <a href="#process_response_location/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">process_response_location(response)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="process_status_code/1">
+  
+  <div class="detail-header">
+    <a href="#process_status_code/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">process_status_code(status_code)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="process_url/1">
+  
+  <div class="detail-header">
+    <a href="#process_url/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">process_url(url)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="process_url/2">
+  
+  <div class="detail-header">
+    <a href="#process_url/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">process_url(url, options)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="put/2">
+  
+    <span id="put/1"></span>
+  
+  <div class="detail-header">
+    <a href="#put/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">put(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request(:put, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="put!/2">
+  
+    <span id="put!/1"></span>
+  
+  <div class="detail-header">
+    <a href="#put!/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">put!(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>A shortcut for <code class="inline">request!(:put, url, options)</code>.</p>
+
+  </section>
+</div>
+<div class="detail" id="request/3">
+  
+    <span id="request/2"></span>
+  
+  <div class="detail-header">
+    <a href="#request/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">request(method, url, options \\ [])</span>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>request(atom, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>, [{atom, any}]) ::
+  %HTTPotion.Response{body: term, headers: term, status_code: term} |
+  %HTTPotion.AsyncResponse{id: term} |
+  %HTTPotion.ErrorResponse{message: term}</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Sends an HTTP request.</p>
+<p>Args:</p>
+<ul>
+<li><code class="inline">method</code> - HTTP method, atom (:get, :head, :post, :put, :delete, etc.)
+</li>
+<li><code class="inline">url</code> - URL, binary string or char list
+</li>
+<li><code class="inline">options</code> - orddict of options
+</li>
+</ul>
+<p>Options:</p>
+<ul>
+<li><code class="inline">body</code> - request body, binary string or char list
+</li>
+<li><code class="inline">headers</code> - HTTP headers, orddict (eg. <code class="inline">[&quot;Accept&quot;: &quot;application/json&quot;]</code>)
+</li>
+<li><code class="inline">timeout</code> - timeout in ms, integer
+</li>
+<li><code class="inline">basic_auth</code> - basic auth credentials (eg. <code class="inline">{&quot;user&quot;, &quot;password&quot;}</code>)
+</li>
+<li><code class="inline">stream_to</code> - if you want to make an async request, the pid of the process
+</li>
+<li><code class="inline">direct</code> - if you want to use ibrowse’s direct feature, the pid of
+the worker spawned by <a href="#spawn_worker_process/2"><code class="inline">spawn_worker_process/2</code></a> or <a href="#spawn_link_worker_process/2"><code class="inline">spawn_link_worker_process/2</code></a>
+</li>
+<li><code class="inline">follow_redirects</code> - if true and a response is a redirect, header[:Location] is taken for the next request
+</li>
+</ul>
+<p>Returns <a href="https://hexdocs.pm/httpotion/3.0.2/HTTPotion.Response.html"><code class="inline">HTTPotion.Response</code></a> or <a href="https://hexdocs.pm/httpotion/3.0.2/HTTPotion.AsyncResponse.html"><code class="inline">HTTPotion.AsyncResponse</code></a> if successful.
+Returns <a href="https://hexdocs.pm/httpotion/3.0.2/HTTPotion.ErrorResponse.html"><code class="inline">HTTPotion.ErrorResponse</code></a> if failed.</p>
+
+  </section>
+</div>
+<div class="detail" id="request/5">
+  
+  <div class="detail-header">
+    <a href="#request/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">request(method, url, body, headers, options)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Deprecated form of <code class="inline">request</code>; body and headers are now options, see <a href="#request/3"><code class="inline">request/3</code></a>.</p>
+
+  </section>
+</div>
+<div class="detail" id="request!/3">
+  
+    <span id="request!/2"></span>
+  
+  <div class="detail-header">
+    <a href="#request!/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">request!(method, url, options \\ [])</span>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>request!(atom, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>, [{atom, any}]) ::
+  %HTTPotion.Response{body: term, headers: term, status_code: term} |
+  %HTTPotion.AsyncResponse{id: term}</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Like <code class="inline">request</code>, but raises  <a href="https://hexdocs.pm/httpotion/3.0.2/HTTPotion.HTTPError.html"><code class="inline">HTTPotion.HTTPError</code></a> if failed.</p>
+
+  </section>
+</div>
+<div class="detail" id="request_direct/6">
+  
+    <span id="request_direct/3"></span>
+  
+    <span id="request_direct/4"></span>
+  
+    <span id="request_direct/5"></span>
+  
+  <div class="detail-header">
+    <a href="#request_direct/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">request_direct(conn_pid, method, url, body \\ &quot;&quot;, headers \\ [], options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Deprecated form of <code class="inline">request</code> with the <code class="inline">direct</code> option; body and headers are now options, see <a href="#request/3"><code class="inline">request/3</code></a>.</p>
+
+  </section>
+</div>
+<div class="detail" id="response_ok/1">
+  
+  <div class="detail-header">
+    <a href="#response_ok/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">response_ok(response)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="spawn_link_worker_process/2">
+  
+    <span id="spawn_link_worker_process/1"></span>
+  
+  <div class="detail-header">
+    <a href="#spawn_link_worker_process/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">spawn_link_worker_process(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Starts a linked worker process for use with the <code class="inline">direct</code> option.</p>
+
+  </section>
+</div>
+<div class="detail" id="spawn_worker_process/2">
+  
+    <span id="spawn_worker_process/1"></span>
+  
+  <div class="detail-header">
+    <a href="#spawn_worker_process/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">spawn_worker_process(url, options \\ [])</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Starts a worker process for use with the <code class="inline">direct</code> option.</p>
+
+  </section>
+</div>
+<div class="detail" id="start/0">
+  
+  <div class="detail-header">
+    <a href="#start/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">start()</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Ensures that HTTPotion and its dependencies are started.</p>
+
+  </section>
+</div>
+<div class="detail" id="stop_worker_process/1">
+  
+  <div class="detail-header">
+    <a href="#stop_worker_process/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">stop_worker_process(pid)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Stops a worker process started with <a href="#spawn_worker_process/2"><code class="inline">spawn_worker_process/2</code></a> or <a href="#spawn_link_worker_process/2"><code class="inline">spawn_link_worker_process/2</code></a>.</p>
+
+  </section>
+</div>
+<div class="detail" id="transformer/4">
+  
+  <div class="detail-header">
+    <a href="#transformer/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">transformer(target, method, url, options)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="verify_json/1">
+  
+  <div class="detail-header">
+    <a href="#verify_json/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">verify_json(arg)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+
+        </section>
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.1),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-126b5f0e90.js"></script>
+  </body>
+</html>
+
