@@ -45,6 +45,10 @@ defmodule Grafana.Dashboard do
   @doc """
   Delete an existing dashboard with the given slug. Slug is the url-friendly
   version of the dashboard title.
+
+    iex> {:ok, response} = Grafana.Dashboard.delete("test")
+    ...> Map.keys(response)
+    ["title"]
   """
   def delete(slug), do: api_delete "#{@path}/db/#{slug}"
 
