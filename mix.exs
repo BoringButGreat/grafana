@@ -3,8 +3,8 @@ defmodule Grafana.Mixfile do
 
   def project do
     [app: :grafana,
-     version: "0.0.1",
-     elixir: "> 1.3.0",
+     version: "0.1.0",
+     elixir: ">= 1.3.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      description: "Library for interacting with the Grafana API in Elixir",
