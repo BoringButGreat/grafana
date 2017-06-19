@@ -39,8 +39,11 @@ defmodule Grafana.API.Fake do
   # directory structure of the test .json files.
   def api_get(path, _), do: load(path <> ".json")
 
-  def api_delete(path), do: {:ok, "TEST: delete #{path}"}
-  def api_delete(path, args), do: {:ok, "TEST: delete #{path} with args #{inspect args}"}
+  # A few API get/1 calls don't follow the general structure; e.g calls that
+  # specify an ID at the end. Define special functions for them above the generic ones.
+  def api_delete("/api/dashboards/" <> _), do: load("/delete/api/dashboards/db.json")
+  def api_delete(path), do: load("/delete" <> path <> ".json")
+  def api_delete(path, _), do: load("/delete" <> path <> ".json")
 
   def basic_auth_get(path), do: load(path <> ".json")
   def no_auth_get(path), do: load(path <> ".json")
