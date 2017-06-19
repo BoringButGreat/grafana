@@ -73,8 +73,6 @@ defmodule Grafana.API.Real do
   end
 
   def no_auth_post(path, map) do
-    # HTTPotion.post(api_host() <> path, [body: Poison.encode(body)])
-    # |> validate
     {:ok, body} = Poison.encode(map)
     HTTPotion.post(api_host() <> path, [body: body])
     |> validate
