@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.16.1">
-    <title>Grafana.Dashboard – grafana v0.0.1</title>
+    <title>Grafana.Dashboard – grafana v0.1.0</title>
     <link rel="stylesheet" href="dist/app-4ecae1abb8.css" />
     
       <link rel="canonical" href="https://hexdocs.pm/grafana/Grafana.Dashboard.html" />
@@ -29,7 +29,7 @@
         grafana
       </h1>
       <h2 class="sidebar-projectVersion">
-        v0.0.1
+        v0.1.0
       </h2>
     </div>
     
@@ -63,7 +63,7 @@
 
 
       <h1>
-        <small class="visible-xs">grafana v0.0.1</small>
+        <small class="visible-xs">grafana v0.1.0</small>
         Grafana.Dashboard
         
           <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L1" title="View Source" class="view-source" rel="help">
@@ -211,7 +211,7 @@ is a boolean indicating if a tagcloud should be returned</p>
     </a>
     <span class="signature">delete(slug)</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L49" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L53" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -222,6 +222,9 @@ is a boolean indicating if a tagcloud should be returned</p>
   <section class="docstring">
     <p>Delete an existing dashboard with the given slug. Slug is the url-friendly
 version of the dashboard title.</p>
+<p>  iex&gt; {:ok, response} = Grafana.Dashboard.delete(“test”)
+  …&gt; Map.keys(response)
+  [“title”]</p>
 
   </section>
 </div>
@@ -281,7 +284,7 @@ of the dashboard title.</p>
     </a>
     <span class="signature">get_from_json(json)</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L63" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L67" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -369,7 +372,7 @@ of the dashboard title.</p>
     </a>
     <span class="signature">params_to_json(id \\ &quot;null&quot;, title \\ &quot;new dashboard&quot;, tags \\ [], rows \\ [], overwrite \\ false, version \\ 0, editable \\ false, style \\ &quot;light&quot;)</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L98" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L102" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -407,7 +410,7 @@ of the dashboard title.</p>
     </a>
     <span class="signature">search(query, starred, tag, tagcloud)</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L74" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L78" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -434,7 +437,7 @@ is a boolean indicating if a tagcloud should be returned.</p>
     </a>
     <span class="signature">tags()</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L58" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/dashboard.ex#L62" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
