@@ -7,7 +7,9 @@ defmodule Grafana.Mixfile do
      elixir: "> 1.3.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     deps: deps(),
+     docs: docs()
+    ]
   end
 
   # Configuration for the OTP application
@@ -15,6 +17,13 @@ defmodule Grafana.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [applications: [:ex_doc, :logger, :httpotion, :poison]]
+  end
+
+  defp docs do
+    [
+      source_url: "https://github.com/BoringButGreat/grafana",
+      extras: ["README.md"]
+    ]
   end
 
   # Dependencies can be Hex packages:
