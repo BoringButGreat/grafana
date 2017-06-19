@@ -1,19 +1,19 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.16.1">
-    <title>Grafana.Base – grafana v0.0.1</title>
+    <title>Grafana – grafana v0.0.1</title>
     <link rel="stylesheet" href="dist/app-4ecae1abb8.css" />
     
     <script src="dist/sidebar_items-977b714a33.js"></script>
   </head>
-  <body data-type="modules">
+  <body data-type="extras">
     <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
 
-    <div class="main">
+<div class="main">
 <button class="sidebar-toggle">
   <span class="icon-menu" aria-hidden="true"></span>
   <span class="sr-only">Toggle Sidebar</span>
@@ -60,33 +60,38 @@
     <div id="content" class="content-inner">
 
 
-      <h1>
-        <small class="visible-xs">grafana v0.0.1</small>
-        Grafana.Base
-        
-          <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/grafana.ex#L1" title="View Source" class="view-source" rel="help">
-            <span class="icon-code" aria-hidden="true"></span>
-            <span class="sr-only">View Source</span>
-          </a>
-        
-      </h1>
+<h1>Grafana</h1>
+<p>Elixir tools for accessing the Grafana API (see http://docs.grafana.org/http_api/).</p>
+<h2 id="installation" class="section-heading">
+  <a href="#installation" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Installation
+</h2>
 
-      
-        <section id="moduledoc">
-          <p>When used, it defines overridable functions that allow you to make custom
-Grafana clients.</p>
+<ol>
+<li><p>Add grafana to your list of dependencies in <code class="inline">mix.exs</code>:</p>
+<pre><code class="elixir"> def deps do
+   [{:grafana, &quot;~&gt; 0.0.1&quot;, github: &quot;boringbutgreat/grafana&quot;}]
+ end</code></pre>
+</li>
+<li><p>Ensure grafana is started before your application:</p>
+<pre><code class="elixir"> def application do
+   [applications: [:grafana]]
+ end</code></pre>
+</li>
+<li><p>Configure the environment variables in your config files:</p>
+<pre><code class="elixir"> config :grafana,
+   api_host: &quot;&lt;your grafana server url&gt;&quot;,
+   api_key: &quot;Bearer &lt;your key&gt;&quot;</code></pre>
+</li>
+</ol>
+<h2 id="mocked-mode-for-simulating-api-calls-in-your-application-s-test-scripts" class="section-heading">
+  <a href="#mocked-mode-for-simulating-api-calls-in-your-application-s-test-scripts" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Mocked mode for simulating API calls in your application’s test scripts
+</h2>
 
-        </section>
-      
+<pre><code class="elixir">  config :grafana, api_host: &quot;test&quot;</code></pre>
 
-      
-
-      
-
-      
-
-      
-          <footer class="footer">
+      <footer class="footer">
         <p>
           <span class="line">
             Built using
