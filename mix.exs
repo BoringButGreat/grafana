@@ -31,7 +31,7 @@ defmodule Grafana.Mixfile do
   defp package do
     [
       maintainers: [" pbonney "],
-      licenses: ["BSD 3-clause"],
+      licenses: ["BSD-3-clause"],
       links: %{"GitHub" => "https://github.com/BoringButGreat/grafana"}
     ]
   end
