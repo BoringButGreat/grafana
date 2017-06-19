@@ -8,7 +8,8 @@ defmodule Grafana.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps(),
-     docs: docs()
+     docs: docs(),
+     package: package()
     ]
   end
 
@@ -23,6 +24,14 @@ defmodule Grafana.Mixfile do
     [
       source_url: "https://github.com/BoringButGreat/grafana",
       extras: ["README.md"]
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: [" pbonney "],
+      licenses: ["BSD 3-clause"],
+      links: %{"GitHub" => "https://github.com/BoringButGreat/grafana"}
     ]
   end
 
