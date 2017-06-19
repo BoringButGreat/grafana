@@ -7,6 +7,7 @@ defmodule Grafana.Mixfile do
      elixir: "> 1.3.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: "Library for interacting with the Grafana API in Elixir"
      deps: deps(),
      docs: docs(),
      package: package()
