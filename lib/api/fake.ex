@@ -39,7 +39,7 @@ defmodule Grafana.API.Fake do
   # directory structure of the test .json files.
   def api_get(path, _), do: load(path <> ".json")
 
-  # A few API get/1 calls don't follow the general structure; e.g calls that
+  # A few API delete/1 calls don't follow the general structure; e.g calls that
   # specify an ID at the end. Define special functions for them above the generic ones.
   def api_delete("/api/dashboards/" <> _), do: load("/delete/api/dashboards/db.json")
   def api_delete(path), do: load("/delete" <> path <> ".json")
