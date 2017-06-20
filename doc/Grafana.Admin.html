@@ -5,10 +5,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.16.1">
-    <title>Grafana.Admin – grafana v0.1.0</title>
+    <title>Grafana.Admin – grafana v0.1.1</title>
     <link rel="stylesheet" href="dist/app-4ecae1abb8.css" />
-    
-      <link rel="canonical" href="https://hexdocs.pm/grafana/Grafana.Admin.html" />
     
     <script src="dist/sidebar_items-977b714a33.js"></script>
   </head>
@@ -29,7 +27,7 @@
         grafana
       </h1>
       <h2 class="sidebar-projectVersion">
-        v0.1.0
+        v0.1.1
       </h2>
     </div>
     
@@ -63,7 +61,7 @@
 
 
       <h1>
-        <small class="visible-xs">grafana v0.1.0</small>
+        <small class="visible-xs">grafana v0.1.1</small>
         Grafana.Admin
         
           <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L1" title="View Source" class="view-source" rel="help">
@@ -174,7 +172,7 @@
     </a>
     <span class="signature">delete_user(id)</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L30" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L50" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -184,6 +182,9 @@
   </div>
   <section class="docstring">
     <p>Delete global user with given id.</p>
+<p>  iex&gt; {:ok, response} = Grafana.Admin.delete_user(1)
+  …&gt; Map.keys(response)
+  [“message”]</p>
 
   </section>
 </div>
@@ -196,7 +197,7 @@
     </a>
     <span class="signature">new_user(json)</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L15" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L23" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -206,6 +207,9 @@
   </div>
   <section class="docstring">
     <p>Create new global user as specified by json.</p>
+<p>  iex&gt; {:ok, response} = Grafana.Admin.new_user(%{“name” =&gt; “User”, “email” =&gt; “user@graf.com”, “login” =&gt; “user”, “password” =&gt; “userpassword”})
+  …&gt; Map.keys(response)
+  [“id”,”message”]</p>
 
   </section>
 </div>
@@ -218,7 +222,7 @@
     </a>
     <span class="signature">set_password(user_id, json)</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L20" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L32" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -228,6 +232,9 @@
   </div>
   <section class="docstring">
     <p>Set password for user with given id. Json format is {“password”: “<newpassword>“}.</p>
+<p>  iex&gt; {:ok, response} = Grafana.Admin.set_password(1, %{“password” =&gt; “newpassword”})
+  …&gt; Map.keys(response)
+  [“message”]</p>
 
   </section>
 </div>
@@ -240,7 +247,7 @@
     </a>
     <span class="signature">set_permissions(user_id, json)</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L25" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L41" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -250,6 +257,9 @@
   </div>
   <section class="docstring">
     <p>Set permissions for given user as specified by json.</p>
+<p>  iex&gt; {:ok, response} = Grafana.Admin.set_permissions(1, %{“isGrafanaAdmin” =&gt; true})
+  …&gt; Map.keys(response)
+  [“message”]</p>
 
   </section>
 </div>
@@ -262,7 +272,7 @@
     </a>
     <span class="signature">settings()</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L10" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L14" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -272,6 +282,9 @@
   </div>
   <section class="docstring">
     <p>Get global admin settings.</p>
+<p>  iex&gt; {:ok, settings} = Grafana.Admin.settings
+  …&gt; Map.keys(settings)
+  [“DEFAULT”,”analytics”,”auth.anonymous”,”auth.basic”,”auth.github”,”auth.google”,”auth.ldap”,”auth.proxy”,”dashboards.json”,”database”,”emails”,”event_publisher”,”log”,”log.console”,”log.file”,”paths”,”security”,”server”,”session”,”smtp”,”users”]</p>
 
   </section>
 </div>
@@ -292,7 +305,7 @@
     </a>
     <span class="signature">user_params_to_json(name \\ &quot;&quot;, email \\ &quot;&quot;, login \\ &quot;user&quot;, password \\ &quot;password&quot;)</span>
     
-      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L43" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/BoringButGreat/grafana/blob/master/lib/admin.ex#L63" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
