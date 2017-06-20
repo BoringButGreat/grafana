@@ -7,4 +7,5 @@ defmodule GrafanaTest do
   doctest Grafana.Login
   doctest Grafana.Currentuser
   doctest Grafana.Snapshot
+  doctest Grafana.Admin
 end

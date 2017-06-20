@@ -42,6 +42,7 @@ defmodule Grafana.API.Fake do
   # A few API delete/1 calls don't follow the general structure; e.g calls that
   # specify an ID at the end. Define special functions for them above the generic ones.
   def api_delete("/api/dashboards/" <> _), do: load("/delete/api/dashboards/db.json")
+  def api_delete("/api/admin/users/" <> _), do: load("/delete/api/admin/users/user.json")
   def api_delete(path), do: load("/delete" <> path <> ".json")
   def api_delete(path, _), do: load("/delete" <> path <> ".json")
 
@@ -49,14 +50,41 @@ defmodule Grafana.API.Fake do
   def no_auth_get(path), do: load(path <> ".json")
 
   def api_post(path), do: load("/post" <> path <> ".json")
-  def api_post(path, _), do: load("/post" <> path <> ".json")
-  def no_auth_post(path, _), do: load("/post" <> path <> ".json")
+  def api_post(path, map) do
+    with {:ok, _} <- Poison.encode(map),
+    do: load("/post" <> path <> ".json")
+  end
+  def no_auth_post(path, map) do
+    with {:ok, _} <- Poison.encode(map),
+    do: load("/post" <> path <> ".json")
+  end
 
-  # Other API function tests are not implemented.
   def api_put(_), do: @default
-  def api_put(_, _), do: @default
+  def api_put(path = "/api/admin/users/" <> _, map) do
+    load_path = "/put/api/admin/users/"
+    file = cond do
+      String.match?(path, ~r[password$]) ->
+        "password.json"
+      String.match?(path, ~r[permissions$]) ->
+        "permissions.json"
+      true ->
+        "default.json"
+    end
+    with {:ok, _} <- Poison.encode(map),
+    do: load(load_path <> file)
+  end
+  def api_put(_, map) do
+    with {:ok, _} <- Poison.encode(map),
+    do: @default
+  end
   def api_patch(_), do: @default
-  def api_patch(_, _), do: @default
+  def api_patch(_, map) do
+    with {:ok, _} <- Poison.encode(map),
+    do: @default
+  end
   def no_auth_put(_), do: @default
-  def no_auth_put(_, _), do: @default
+  def no_auth_put(_, map) do
+    with {:ok, _} <- Poison.encode(map),
+    do: @default
+  end
 end
