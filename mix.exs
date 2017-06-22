@@ -3,7 +3,7 @@ defmodule Grafana.Mixfile do
 
   def project do
     [app: :grafana,
-     version: "0.1.2",
+     version: "0.1.3",
      elixir: ">= 1.3.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -18,7 +18,7 @@ defmodule Grafana.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:ex_doc, :logger, :httpotion, :poison]]
+    [applications: [:logger, :httpotion, :poison]]
   end
 
   defp docs do
@@ -47,7 +47,7 @@ defmodule Grafana.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:ex_doc, "> 0.14.0", only: [:dev, :test], runtime: false},
+      {:ex_doc, "~> 0.15", only: [:dev, :test, :docs]},
       {:httpotion, "> 3.0.0"},
       {:poison, "~> 2.0"}
     ]
