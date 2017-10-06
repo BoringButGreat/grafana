@@ -7,7 +7,7 @@ defmodule Grafana.API.Real do
   defp password, do: Application.get_env(:grafana, :password)
 
   defp auth_header, do: ["Authorization": api_key()]
-  defp json_header, do: ["Content-type": "application/json; charset=UTF-8"]
+  defp json_header, do: ["Content-type": "text/html; charset=UTF-8"]
 
   # Inside each individual API query, we can use a generic API call by sending the
   # appropriate arguments to the right path.
