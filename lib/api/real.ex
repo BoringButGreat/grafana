@@ -6,7 +6,8 @@ defmodule Grafana.API.Real do
   defp username, do: Application.get_env(:grafana, :username)
   defp password, do: Application.get_env(:grafana, :password)
 
-  defp headers, do: ["Authorization": api_key()]
+  defp auth_header, do: ["Authorization": api_key()]
+  defp json_header, do: ["Content-type": "application/json"]
 
   # Inside each individual API query, we can use a generic API call by sending the
   # appropriate arguments to the right path.
@@ -16,39 +17,39 @@ defmodule Grafana.API.Real do
   # don't, but "mix test" will fail - this will likely cause problems for
   # someone else who is using the Grafana API in their project.
   def api_get(path) do
-    HTTPotion.get(api_host() <> path, [headers: headers()])
+    HTTPotion.get(api_host() <> path, [headers: auth_header()])
     |> validate
   end
   def api_get(path, query_args) do
-    HTTPotion.get(api_host() <> path, [headers: headers(), query: query_args])
+    HTTPotion.get(api_host() <> path, [headers: auth_header(), query: query_args])
     |> validate
   end
 
   def api_put(path, map) do
     {:ok, body} = Poison.encode(map)
-    HTTPotion.put(api_host() <> path, [body: body, headers: headers()])
+    HTTPotion.put(api_host() <> path, [body: body, headers: auth_header() ++ json_header()])
     |> validate
   end
 
   def api_post(path) do
-    HTTPotion.post(api_host() <> path, [headers: headers()])
+    HTTPotion.post(api_host() <> path, [headers: auth_header()])
     |> validate
   end
 
   def api_post(path, map) do
     {:ok, body} = Poison.encode(map)
-    HTTPotion.post(api_host() <> path, [body: body, headers: headers()])
+    HTTPotion.post(api_host() <> path, [body: body, headers: auth_header() ++ json_header()])
     |> validate
   end
 
   def api_patch(path, map) do
     {:ok, body} = Poison.encode(map)
-    HTTPotion.patch(api_host() <> path, [body: body, headers: headers()])
+    HTTPotion.patch(api_host() <> path, [body: body, headers: auth_header() ++ json_header()])
     |> validate
   end
 
   def api_delete(path) do
-    HTTPotion.delete(api_host() <> path, [headers: headers()])
+    HTTPotion.delete(api_host() <> path, [headers: auth_header()])
   end
 
   def basic_auth_get(path) do
@@ -57,7 +58,7 @@ defmodule Grafana.API.Real do
   end
 
   def basic_auth_get(path, query_args) do
-    HTTPotion.get(api_host() <> path, [headers: headers(), query: query_args])
+    HTTPotion.get(api_host() <> path, [headers: auth_header(), query: query_args])
     |> validate
   end
 
@@ -68,13 +69,13 @@ defmodule Grafana.API.Real do
 
   def no_auth_put(path, map) do
     {:ok, body} = Poison.encode(map)
-    HTTPotion.put(api_host() <> path, [body: body])
+    HTTPotion.put(api_host() <> path, [headers: json_header(), body: body])
     |> validate
   end
 
   def no_auth_post(path, map) do
     {:ok, body} = Poison.encode(map)
-    HTTPotion.post(api_host() <> path, [body: body])
+    HTTPotion.post(api_host() <> path, [headers: json_header(), body: body])
     |> validate
   end
 
