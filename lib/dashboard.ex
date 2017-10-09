@@ -1,6 +1,5 @@
 defmodule Grafana.Dashboard do
   use Grafana.API
-  import Grafana
 
   @path "/api/dashboards"
 
@@ -124,7 +123,5 @@ defmodule Grafana.Dashboard do
       },
       overwrite: overwrite
     }
-    |> Poison.encode
-    |> verify_json
   end
 end
