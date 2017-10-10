@@ -51,6 +51,7 @@ defmodule Grafana.API.Real do
 
   def api_delete(path) do
     HTTPotion.delete(api_host() <> path, [headers: auth_header() ++ accept_header()])
+    |> validate
   end
 
   def basic_auth_get(path) do
