@@ -5,8 +5,10 @@ defmodule Grafana.Users do
 
   @doc """
   Get all users.
+
+  Note: per Grafana API docs this call must be done with Basic Auth and as Admin
   """
-  def get, do: api_get @path
+  def get, do: basic_auth_get @path
 
   @doc """
   Get user with given id.
